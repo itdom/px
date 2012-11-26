@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<roleSetting>
+<roles>
+<!--
+U 个人使用只看自己的，可以修改删除自己的，
+V  查看全部数据，只可修改删除自己的；
+M  管理全部数据，可删除修改任何人的，   这些数据通常不属于某个人，比如教师档案。
+D  管理某校区下某部门的，比如部门线索。
+C  管理全部数据，可删除修改任何人的，    全部校区，某校区， 某校区的某部门
+-->
+<role name="SUPER_M" label="超级管理权限" module="super_m" branchType="100,300,500,700" old="N"/>    
+<role name="NEWS_U" label= "新闻发布" module="info.bbs"  branchType="300,500,700" old="NEWS_M"/>
+<role name="NEWS_C" label= "新闻管理和栏目设置" module="info.bbs"  branchType="300,500,700" old="NEWS_M"/>
+
+<role name="DOCUMENT_M" label= "文档目录设置" module="info.bbs"  branchType="100,300,500,700" old="N"/>
+
+<role name="WORKFLOW_PROCESS_INSTACNCE_C" label= "流程管理" module="menu.work"  branchType="100,700" old="N"/>
+<role name="WORKFLOW_PROCESS_M" label= "流程定义管理" module="menu.work"  branchType="100,700" old="N"/>
+
+<role name="MARKET_PLAN_U" label="市场计划操作" module="market_plan"  branchType="100,300,500,700" old="MARKET_C_M"/>
+<role name="MARKET_PLAN_C" label="市场计划管理" module="market_plan"  branchType="100,300,500,700" old="MARKET_C_M"/>
+<role name="PUBLIC_CLAZZ_M" label="公开课管理" module="market_plan"  branchType="100,300,500,700" old=""/>    
+<role name="MARKET_DATABASE_C" label="数据库营销" module="market_plan"  branchType="100,300,500,700" old="MARKET_C_M"/>
+
+<role name="ENROLL_U" label= "招生管理" module="enroll.person"  branchType="100,300,500,700" old="ENROLL_M"/>
+<role name="ENROLL_C" label= "全部招生信息管理（主管）" module="enroll.person"  branchType="100,300,500,700" old="ENROLL_C"/>
+<role name="ENROLL_V" label= "招生信息查看" module="enroll.person"  branchType="100,300,500,700" old="ENROLL_C_V"/>
+<role name="MARKET_ENROLL_U" label= "市场招生管理" module="market_plan"  branchType="100,300,500,700" old="N"/>
+
+<role name="STUDENT_JOIN_M" label= "报名管理" module="student"  branchType="100,300,500,700" old="STUDENT_M"/>
+<role name="STUDENT_V" label= "学生查看" module="student"  branchType="100,300,500,700" old="STUDENT_V"/>
+<role name="STUDENT_M" label= "学生管理" module="student"  branchType="100,300,500,700" old="STUDENT_M"/>
+
+<role name="STUDENT_ATTENDENCE_M" label= "出勤管理" module="student"  branchType="100,300,500,700" old="S_ATTEND_M"/>
+<role name="STUDENT_ATTENDENCE_V" label= "出勤查看" module="student"  branchType="100,300,500,700" old="S_ATTEND_V"/>
+<role name="TEACHER_ATTENDENCE_M" label= "出勤管理(赋予教师)" module="student"  branchType="100,300,500,700" old="S_ATTEND_M"/>
+<role name="TEACHER_ATTENDENCE_V" label= "出勤查看(赋予教师)" module="student"  branchType="100,300,500,700" old="S_ATTEND_V"/>
+
+<role name="STUDENT_LOG_C" label= "学生日志管理" module="student"  branchType="100,300,500,700" old="N"/>
+<role name="STUDENT_LOG_V" label= "学生日志查看" module="student"  branchType="100,300,500,700" old="N"/>
+
+<role name="CLAZZINSTANCE_LOG_C" label= "班级日志管理" module="student"  branchType="100,300,500,700" old="N"/>
+<role name="CLAZZINSTANCE_LOG_V" label= "班级日志查看" module="student"  branchType="100,300,500,700" old="N"/>
+
+<role name="SCORE_M" label= "成绩管理" module="student"  branchType="100,300,500,700" old="S_SCORE_M"/>
+<role name="SCORE_V" label= "成绩查看" module="student"  branchType="100,300,500,700" old="S_SCORE_V"/>
+
+<role name="EXAM_M" label= "考试管理" module="student"  branchType="100,300,500,700" old="TEST_M"/>
+<role name="EXAM_V" label= "考试查看" module="student"  branchType="100,300,500,700" old="TEST_M"/>
+
+<role name="GRADUATE_U" label= "就业管理" module="auxiliary"  branchType="100,300,500,700" old="GRADUATE_M"/>
+<role name="GRADUATE_C" label= "全部就业信息管理" module="auxiliary"  branchType="100,300,500,700" old="COM_ENROOL_C"/>
+<role name="DORM_M" label= "住宿管理" module="auxiliary"  branchType="300,500" old="M_DORM_M"/>
+<role name="DORM_V" label= "住宿查看" module="auxiliary"  branchType="300,500" old="M_DORM_V"/>
+
+<role name="ACCOUNTING_V" label= "财务查看" module="account"  branchType="100,300,500,700" old="FIN_M"/>
+<role name="ACCOUNTING_M" label= "财务管理" module="account"  branchType="100,300,500,700" old="FIN_V"/>
+
+<role name="CHARGE_U" label= "收费管理" module="charge"  branchType="100,300,500,700" old="M_CHARGE_M" note="收费以及查看自己的收费记录"/>
+<role name="CHARGE_C" label= "收费管理(主管)" module="charge"  branchType="100,300,500,700" old="M_CHARGE_M" note="查看全部收费记录和统计"/>
+<role name="COUPON_M" label= "优惠券管理" module="charge"  branchType="100,300,500,700" old="COUPON_M" note="优惠券管理"/>
+<role name="CHARGE_TASK_M" label= "收费任务管理" module="charge"  branchType="100,300,500,700" old="M_CHARGE_M"/>
+
+<role name="THINGS_BOOK_M" label= "教材管理" module="materials"  branchType="100,300,500,700" old="M_BOOK_M"/>
+<role name="TEACH_BOOK_M" label= "图书管理" module="materials"  branchType="100,300,500,700" old="M_BOOK_M"/>
+<role name="THINGS_M" label="物品管理（借出，采购，发放，增加，类别管理，库存盘点）"  module="materials"  branchType="100,300,500,700" old="M_THINGS_M"/>
+<role name="RAW_FOOD_M" label= "食物管理" module="materials"  branchType="700" old=""/>
+
+<role name="HR_ARCHIVE_M" label= "教师档案管理" module="teachers"  branchType="100,300,500,700" old="HR_ARCHIVE_M"/>
+<role name="HR_ATTENDENCE_V" label= "教师出勤查看" module="teachers"  branchType="100,300,500,700" old="S_ATTEND_M"/>
+<role name="HR_ATTENDENCE_M" label= "教师出勤管理" module="teachers"  branchType="100,300,500,700" old="S_ATTEND_V"/>
+<role name="HR_SALARY_M" label= "教师工资管理" module="teachers"  branchType="100,300,500,700" old="HR_SALARY_M"/>
+<role name="HR_SALARY_V" label= "教师工资管理" module="teachers"  branchType="100,300,500,700" old="HR_SALARY_V"/>
+<role name="TEACHER_LOG_C" label= "教师日志管理" module="teachers"  branchType="100,300,500,700" old="N"/>
+<role name="TEACHER_LOG_V" label= "教师日志查看" module="teachers"  branchType="100,300,500,700" old="N"/>    
+
+<role name="CMS_CONTENT_M" label= "内容发布" module="cms"  branchType="100,300,500,700" old="WEBSITE_M"/>
+<role name="CMS_CHANNEL_M" label= "频道管理" module="cms"  branchType="100,300,500,700" old="WEBSITE_V"/>
+
+<role name="NUTRAION_V" label= "营养查看" module="nutration"  branchType="700" old="NUTRITION_V"/>
+<role name="NUTRAION_M" label= "营养管理" module="nutration"  branchType="700" old="NUTRITION_M"/>
+
+<role name="PHYSICALEXAM_V" label= "体检查看" module="nutration"  branchType="700" old="N"/>
+<role name="PHYSICALEXAM_M" label= "体检管理" module="nutration"  branchType="700" old="N"/>
+
+<role name="TEACHING_U" label= "授课管理" module="teaching"  branchType="100,300,500,700" old="T_M"/>
+<role name="TEACHING_C" label= "教学主管" module="teaching"  branchType="100,300,500,700" old="T_M_C"/>
+<role name="SCHEDULE_M" label= "课程表管理" module="classSetting"  branchType="100,300,500,700" old="TEACH_M_V"/>
+
+<role name="CLAZZ_M" label="班级设置"  module="classSetting"  branchType="100,300,500,700" old="TEACH_M"/>
+<role name="SYSTEM_M" label="系统管理"  module="system"  branchType="100,300,500,700" old="SYS_M"/>
+<role name="STATISTICS_V" label="统计分析" module="statistics" branchType="100,300,500,700" old="MASTER_V"/>
+
+<role name="DEV_SCHOOL_M" label="学校信息管理" module="school" branchType="100,300,500,700" old="DEV_SCHOOL_M"/>
+<role name="DEV_SCHOOL_V" label="学校信息查看" module="school" branchType="100,300,500,700" old="DEV_SCHOOL_V"/>
+<!--<role name="ROLE_USER" label="普通用户"  module="student"  branchType="100,300,500,700" old="ROLE_USER"/>-->
+<role name="ROLE_ADMIN" label="管理员" module="admin" branchType="100,300,500,700" old="ROLE_ADMIN"/>
+<role name="STUDENT_USER" label="学生"  module=""  branchType="100,300,500,700" old="STUDENT"/>
+</roles>
+<roleGroups>
+ 
+    <roleGroup name="学生管理" roles="STUDENT_JOIN_M,STUDENT_M,STUDENT_V,STUDENT_ATTENDENCE_M,STUDENT_ATTENDENCE_V"/>
+    
+    <roleGroup name="系统管理"  discription="系统管理" roles="SYSTEM_M"/>
+    <roleGroup name="初始化管理员(培训)" branchLabel="100" isall="1" roles="SUPER_M"/>
+    
+</roleGroups>
+</roleSetting>
+
+

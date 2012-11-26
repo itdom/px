@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- INFO -->
+      <package name="info" extends="pxdefault" namespace="/info">
+        <action name="index">
+            <result>/WEB-INF/pages/info/frame/info.jsp
+            </result>
+        </action>
+        <action name="menu" class="boardAction" method="menu">
+            <result>/WEB-INF/pages/info/frame/menu.jsp
+            </result>
+        </action>
+         <action name="ig">
+            <result>/ig/ig.jsp</result>
+        </action>
+    </package>
+    <!--json -->
+    <package name="json" extends="json-default">
+        <action name="igNewsToJson" class="igAction" method="igNewsToJson">
+            <result name="success" type="json">
+                <param name="includeProperties">
+                    ^list\[\d+\]\.id,
+                    ^list\[\d+\]\.name
+                </param>
+            </result>
+        </action>
+    </package>
+</struts>
+
+
+

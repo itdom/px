@@ -1,0 +1,28 @@
+<decorators defaultdir="/decorators">
+    <excludes>
+        <pattern>/*ajax=true*</pattern>
+        <pattern>/struts/dojo/*</pattern>
+        <pattern>/resources/*</pattern>
+        <pattern>/common/*</pattern>
+        <pattern>/school/*</pattern>
+	    <pattern>/student/*</pattern>
+	    <pattern>/form/designForm.action*</pattern>
+	    <pattern>*/*.htm*</pattern>
+	    <pattern>*/*.action*</pattern>
+	    <pattern>/WebHelp/*</pattern>
+	    <pattern>/WEB-INF/pages/*/frame/*</pattern>
+	    <pattern>/WEB-INF/pages/form/designer/*</pattern>
+	    <pattern>/WEB-INF/pages/edu/student/basicinfo/camera.jsp*</pattern>
+	    <pattern>/WEB-INF/pages/edu/ol/test/mediaPlayer.jsp*</pattern>
+	    <pattern>/WEB-INF/pages/edu/ol/test/flashPlayer.jsp*</pattern>
+    </excludes>
+
+	<decorator name="index" page="index.jsp">
+		<pattern>/index.jsp</pattern>
+        <pattern>/studentLogin.jsp</pattern>
+		<pattern>/admin/index.jsp</pattern>
+	</decorator>
+    <decorator name="content" page="content.jsp">
+        <pattern>/*</pattern>
+    </decorator>
+</decorators>

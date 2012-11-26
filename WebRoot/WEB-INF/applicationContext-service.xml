@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-2.5.xsd
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+
+	<context:annotation-config/>
+	<context:component-scan base-package="com.rathink"/>
+	
+	
+	<aop:config>
+		<aop:advisor id="managerTx" advice-ref="txAdvice"
+		             pointcut="execution(* *..service.*Manager.*(..))"/>
+	</aop:config>
+
+	<tx:annotation-driven/>
+
+	<aop:aspectj-autoproxy/>
+
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="*" propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+		</tx:attributes>
+	</tx:advice>
+	
+	
+    <bean id="msAdvice" class="com.rathink.p.log.LogAdvice"/>
+    <bean id="logInAdvice" class="com.rathink.p.log.LogInAdvice"/>
+	<aop:config>        
+		<aop:advisor id="userLoginAdvice" advice-ref="logInAdvice"
+		             pointcut="execution(* org.springframework.security.core.userdetails.UserDetailsService.loadUserByUsername(..))"/>
+        <aop:advisor id="modifyStudentAdvice" advice-ref="msAdvice"
+		             pointcut="execution(* com.rathink.p.user.service.UserManager.getUser(..))"/>
+	</aop:config>
+	 
+
+
+	<!-- version 
+	<bean id="versionManager" class="com.rathink.p.user.service.impl.VersionManger" init-method="check">
+		<property name="version" value="saas-ming800"/>
+	</bean> -->
+    <bean id="licenseManager" class="com.rathink.p.account.service.impl.LicenseManagerImpl" init-method="licenseFile" scope="singleton"></bean>
+   <!--  <bean id="accountingTemplateManagerImpl"  class="com.rathink.finance.service.impl.AccountingTemplateManagerImpl" init-method="getAccoutingSystemTemplateMap" scope="singleton"/>
+    <bean id="accountingTitleManagerImpl" class="com.rathink.finance.service.impl.AccountingTitleManagerImpl" init-method="getAccountingSystemMap" scope="singleton"/>
+   -->
+    <!-- role -->
+    <bean id="roleManagerImpl" class="com.rathink.p.user.service.impl.RoleManagerImpl" init-method="initRole" scope="singleton"/>
+    <!-- <bean id="moduleManagerImpl" class="com.rathink.p.module.service.Impl.ModuleManagerImpl" init-method="initModules" scope="singleton"/>-->
+</beans>

@@ -1,0 +1,60 @@
+#login {
+	width: 560px;
+	margin: 15% auto auto auto;
+	background: url(../images/login_top.jpg) no-repeat #FFFFFF;
+}
+
+#login_left {
+	width: 360px;
+	height: 127px;
+	margin-top: 15px;
+	background: url(../images/login_l_bg.gif) right repeat-y;
+	font-size: 14px;
+	color: #403F3F;
+	padding-top: 35px;
+	padding-left: 20px;
+	padding-right: 20px;
+	float: left
+}
+
+.login_tg {
+	padding-top: 90px;
+	border: #999999 1px solid;
+	height: 280px;
+}
+
+#login_right {
+	font-size: 14px;
+	color: #403F3F;
+	margin-top: 50px;
+	margin-left: 30px;
+	float: left
+}
+
+.input2 {
+	width: 93px;
+	height: 18px;
+	border: #7F9DB9 1px solid;
+	margin-left: 2px;
+}
+
+form li.error{
+	background-color: #FFDFDF;
+	margin: 3px 0 !important;
+}
+
+input.error, textarea.error{
+	border: 1px solid #EF5959;
+	border-left: 1px solid #FF8F8F;
+	border-top: 1px solid #FF8F8F;
+	background: #fff;
+}
+
+p.error, li.error label.desc{
+  color: red !important;
+}
+
+p.error{
+	font-size: 9px !important;
+	margin: 1px 0;
+}

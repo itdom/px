@@ -1,0 +1,66 @@
+
+.banner {
+	height: 64px;
+	/*background-image: url(../images/header/banner_bg.gif);
+	background-repeat: no-repeat;*/
+	background-color: #FFFFFF;
+	border-top: 1px solid #FFFFFF;
+	border-bottom: 1px solid #FFFFFF;
+}
+
+.banner .logo {
+	position: absolute;
+	left: 0;
+	top: 1px;
+}
+
+.banner .helpbar {
+	position: absolute;
+	right: 3px;
+	top: 10px;
+
+	/*background-image: url(../images/header/helpbar.gif);*/
+	height: 18px;
+ /*   color: #525252;*/
+    font-size: 12px;
+/*    background-color: #EDEDED;*/
+    border:1px;
+	/*background-repeat: no-repeat;
+    border-right-width: 1px;
+	border-bottom-width: 1px;
+   *//* border-bottom-style: solid;*//*
+    border-bottom-color: #D5D5D5;
+	*//*border-right-style: solid;*//*
+	border-right-color: #D5D5D5;
+    align:right;*/
+}
+
+.inndiv{
+	background-color: #EDEDED;
+}
+
+.banner .helpbar ul {
+	position: absolute;
+	height: 18px;
+	width: 50px;
+	top:15px;
+    display:inline;
+    float:right;
+}
+
+.banner .welcome {
+	position: absolute;
+	right: 15px;
+	top: 42px;
+	color: #525252;
+	font-size: 12px;
+}
+
+.menu {
+    color:#333333;
+	height:35px;
+	/*background-image: url(../images/header/menu_bg.gif);*/
+	background-repeat: no-repeat;
+	background-color: #4184d6;
+    font-weight:bold;
+}

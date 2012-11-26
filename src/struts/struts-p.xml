@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="main" extends="pxdefault" namespace="/main">
+        <action name="dispatcher" class="userAction" method="dispatcher">
+            <result name="success">/common/main.jsp</result>
+        </action>
+    </package>
+     
+    <!-- organ -->
+    <package name="organmgmt" extends="pxdefault" namespace="/system/organmgmt">
+        <action name="organ" class="organAction" method="organ">
+            <result name="success">/WEB-INF/pages/system/organmgmt/frame/organ.jsp</result>
+        </action>
+     </package>
+</struts>

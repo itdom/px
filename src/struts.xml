@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+		"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.action.extension" value="action" />
+    <constant name="struts.ognl.allowStaticMethodAccess" value="true" />
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.custom.i18n.resources" value="ApplicationResources,ApplicationResources-common,ApplicationResources-p,ApplicationResources-info,ApplicationResources-work,ApplicationResources-fin,ApplicationResources-matters,ApplicationResources-crm,ApplicationResources-student,ApplicationResources-teach,ApplicationResources-affair,ApplicationResources-hr,ApplicationResources-ol,ApplicationResources-base,ApplicationResources-cms2,ApplicationResources-cms,ApplicationResources-nutrition,ApplicationResources-charge,ApplicationResources-health,ApplicationResources-exam,ApplicationResources-menu,ApplicationResources-workflow,ApplicationResources-defination,rerrors" />
+	<constant name="struts.multipart.maxSize" value="2097152" />
+	<constant name="struts.ui.theme" value="css_xhtml" />
+	<constant name="struts.codebehind.pathPrefix" value="/WEB-INF/pages/" />
+	<constant name="struts.enable.SlashesInActionNames" value="true" />
+	<constant name="struts.struts.configuration.xml.reload" value="true" />
+	<constant name="struts.struts.i18n.reload" value="true" />
+
+ 
+	<include file="struts/struts-p.xml" />
+	<include file="struts/struts-base.xml"/>
+	<package name="pxdefault" extends="struts-default">
+		<interceptors>
+            <!--<interceptor name="license" class="com.rathink.common.interceptor.LicenseInterceptor"/>-->
+			<interceptor-stack name="defaultStack">
+                <!--<interceptor-ref name="license"/>-->
+				<interceptor-ref name="exception"/>
+                <interceptor-ref name="fileUpload"/>                                
+				<interceptor-ref name="prepare"/>
+				<interceptor-ref name="servletConfig"/>
+				<interceptor-ref name="staticParams"/>
+                <!--<interceptor-ref name="token"/>-->
+				<interceptor-ref name="params">
+					<param name="excludeParams">dojo\..*</param>
+				</interceptor-ref>
+				<interceptor-ref name="workflow">
+					<param name="excludeMethods">
+						input,back,cancel,browse
+					</param>
+				</interceptor-ref>
+				<interceptor-ref name="scopedModelDriven"/>
+				<interceptor-ref name="modelDriven"/>
+			</interceptor-stack>
+			<!--<interceptor-stack name="fileUploadStack">-->
+				<!--<interceptor-ref name="fileUpload"/>-->
+				<!--<interceptor-ref name="defaultStack"/>-->
+			<!--</interceptor-stack>-->
+		</interceptors>
+        <!--
+		<global-exception-mappings>
+			<exception-mapping exception="org.springframework.dao.DataAccessException" result="dataAccessFailure" />
+		</global-exception-mappings>
+         -->
+	</package>
+	<package name="common" extends="pxdefault" namespace="/common">
+		<action name="schoolHeader" class="headerAction" method="schoolHeader">
+			<result name="success">/common/header.jsp</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menus>
+	<!-- 信息知识 -->
+	<menu name="info.bbs" url="/info/index.action" label="menu.infomation" roles="ROLE_USER"/>
+	 
+    <!-- 协同办公 -->
+	<menu name="work" url="/work/work.action" label="menu.work" roles="ROLE_USER"/>
+   
+	  <!-- 考试管理 -->
+    <menu name="auxiliary" url="/work/work.action" label="menu.auxiliary.manage" roles="ROLE_USER,EXAM_M,EXAM_V,GRADUATE_U,GRADUATE_C,DORM_M,DORM_V" />
+	 
+    <!-- 系统管理 -->
+	<menu name="system" url="/system/organmgmt/organ.action" label="menu.system" roles="ROLE_USER,SYSTEM_M"/>
+</menus>
