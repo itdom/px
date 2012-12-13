@@ -16,7 +16,7 @@ import com.rathink.common.model.PageInfo;
 import com.rathink.taglib.PageEntity;
 
 /**
- * @author wyb
+ * @author gdl
  */
 @Component
 public class BaseDaoSupport extends HibernateDaoSupport {
@@ -70,7 +70,7 @@ public class BaseDaoSupport extends HibernateDaoSupport {
 		}
 		listQuery.setFirstResult(pageEntity.getRecordIndex());
 		listQuery.setMaxResults(pageEntity.getPageRecords());
-		List list = listQuery.list();
+		List<?>  list = listQuery.list();
 		PageInfo info = new PageInfo();
 		if (list != null && ! list.isEmpty()) {
 			info.setList(list);
@@ -101,7 +101,7 @@ public class BaseDaoSupport extends HibernateDaoSupport {
 		}
 		listQuery.setFirstResult(first);
 		listQuery.setMaxResults(first);
-		List list = listQuery.list();
+		List<?>  list = listQuery.list();
 		PageInfo info = new PageInfo();
 		if (list != null && ! list.isEmpty()) {
 			info.setList(list);
@@ -125,7 +125,7 @@ public class BaseDaoSupport extends HibernateDaoSupport {
 		}
 		listQuery.setFirstResult(pageEntity.getRecordIndex());
 		listQuery.setMaxResults(pageEntity.getPageRecords());
-		List list = listQuery.list();
+		List<?> list = listQuery.list();
 		PageInfo info = new PageInfo();
 		if (list != null && ! list.isEmpty()) {
 			info.setList(list);
@@ -150,7 +150,7 @@ public class BaseDaoSupport extends HibernateDaoSupport {
 		}
 		listQuery.setFirstResult(first);
 		listQuery.setMaxResults(max);
-		List list = listQuery.list();
+		List<?>  list = listQuery.list();
 		PageInfo info = new PageInfo();
 		if (list != null && ! list.isEmpty()) {
 			info.setList(list);

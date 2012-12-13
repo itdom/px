@@ -26,11 +26,9 @@ public class RoleManagerImpl implements RoleManager {
             Role role = new Role();
             String name = node.selectSingleNode("@name").getText();
             String label = node.selectSingleNode("@label").getText();
-            String branchType = node.selectSingleNode("@branchType").getText();
             String module=node.selectSingleNode("@module").getText();
             role.setName(name);
             role.setFullName(label);
-            role.setRelated(branchType);
             role.setModule(module);
             //把每个role放在roleMap中
             roleMap.put(name,role);
@@ -62,11 +60,9 @@ public class RoleManagerImpl implements RoleManager {
                 if(name.equals(str)){
                     Role role = new Role();
                     String label = node.selectSingleNode("@label").getText();
-                    String branchType = node.selectSingleNode("@branchType").getText();
                     String module=node.selectSingleNode("@module").getText();
                     role.setName(name);
                     role.setFullName(label);
-                    role.setRelated(branchType);
                     role.setModule(module);
                     roleList.add(role);
                     break;

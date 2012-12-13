@@ -26,8 +26,10 @@ import java.util.*;
 
 
 /**
- * User: Kyll
- * Time: 2008-6-23 17:53:56
+ * 用户 
+ * 
+ * @author  gdl
+ * @version 1.0, 2012-11-28
  */
 @Entity
 @Table(name = "P_USER")
@@ -50,7 +52,7 @@ public class User implements Serializable, UserDetails {
     private SettingProperties i18nProperties;
     private String setting;
   
-	private Integer type;    //1 学生用户  0 正常用户
+	private Integer type;    //用户类型
   
     public User() {
 	}

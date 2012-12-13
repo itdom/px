@@ -12,6 +12,7 @@ import javax.servlet.jsp.tagext.TagSupport;
  * Time: 15:18:13
  * To change this template use File | Settings | File Templates.
  */
+@SuppressWarnings("serial")
 public class UserTag extends TagSupport {
     private String type;
     public String getType(){

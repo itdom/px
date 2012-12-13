@@ -10,5 +10,5 @@
     <menu name="auxiliary" url="/work/work.action" label="menu.auxiliary.manage" roles="ROLE_USER,EXAM_M,EXAM_V,GRADUATE_U,GRADUATE_C,DORM_M,DORM_V" />
 	 
     <!-- 系统管理 -->
-	<menu name="system" url="/system/organmgmt/organ.action" label="menu.system" roles="ROLE_USER,SYSTEM_M"/>
+	<menu name="system" url="/system/user/user.action" label="menu.system" roles="ROLE_USER,SYSTEM_M"/>
 </menus>

@@ -8,7 +8,6 @@ import com.rathink.info.alert.service.AlertManager;
 import com.rathink.info.alert.service.AlertDefinationManager;
 import com.rathink.info.alert.model.Alert;
 import com.rathink.info.alert.model.AlertDefination;
-import com.rathink.p.setting.service.SettingPropertiesManager;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -24,7 +23,8 @@ import java.util.Map;
 @Component
 @Scope("prototype")
 public class AlertAction extends BaseAction {
-    @Autowired
+	private static final long serialVersionUID = 1L;
+	@Autowired
     private AlertManager alertManager;
     @Autowired    
     private AlertDefinationManager alertDefinationManager;

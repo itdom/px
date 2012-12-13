@@ -3,7 +3,6 @@
   Time: 2008-1-4 9:18:03
 --%>
 <%@ page import="javax.servlet.http.Cookie"%>
-<%@ page import="org.springframework.security.ui.rememberme.TokenBasedRememberMeServices"%>
 <%
     if (request.getSession(false) != null) {
         session.invalidate();

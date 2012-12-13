@@ -8,6 +8,7 @@ import java.util.*;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.Tag;
 import javax.servlet.jsp.tagext.TagSupport;
+@SuppressWarnings("serial")
 public class AuthTag extends TagSupport
 {
   private User user;

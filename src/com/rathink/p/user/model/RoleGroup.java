@@ -22,9 +22,7 @@ public class RoleGroup implements Serializable{
 	private Integer id;
     private String name;
     private String roles;
-    private Integer branchId;
     private String isall;
-    private String branchLabel;
     private Integer status; 
     private List<Role> myRoleList=new ArrayList<Role>();
     public RoleGroup(){}
@@ -55,24 +53,6 @@ public class RoleGroup implements Serializable{
 
     public void setRoles(String roles) {
         this.roles = roles;
-    }
-
-    @Column(name = "BRANCH_ID")
-    public Integer getBranchId() {
-        return branchId;
-    }
-
-    public void setBranchId(Integer branchId) {
-        this.branchId = branchId;
-    }
-
-    @Transient
-    public String getBranchLabel(){
-        return branchLabel;
-    }
-
-    public void setBranchLabel(String branchLabel){
-        this.branchLabel = branchLabel;
     }
     @Transient
     public String getIsall() {

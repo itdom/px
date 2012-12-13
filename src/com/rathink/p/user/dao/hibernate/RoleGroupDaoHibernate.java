@@ -23,7 +23,7 @@ public class RoleGroupDaoHibernate extends BaseDaoSupport implements RoleGroupDa
        this.getHibernateTemplate().save(rg);
    }
    public RoleGroup getRoleGroup(Integer id){
-      return (RoleGroup)this.getHibernateTemplate().get(RoleGroup.class,id);
+      return this.getHibernateTemplate().get(RoleGroup.class,id);
    }
    public RoleGroup getRoleGroupByRoleNameAndBranch(String roleName,Integer branchId){
        List<RoleGroup> rgList=this.getHibernateTemplate().find("from RoleGroup ug where (ug.roles = '" + roleName + "' or ug.roles like '%"+roleName+",%' or ug.roles like '%,"+roleName+"%') and ug.branchId="+branchId+" and ug.status = 1 order by ug.id desc");
@@ -38,9 +38,9 @@ public class RoleGroupDaoHibernate extends BaseDaoSupport implements RoleGroupDa
        return null;
    }
    public RoleGroup geteRoleGroupByConditions(String name, Integer branchId){
-      List  roleGroupList= this.getHibernateTemplate().find("from RoleGroup rg where rg.name = '"+ name +"'and rg.branchId ="+branchId +"and rg.status = 1");
+      List<RoleGroup>  roleGroupList= this.getHibernateTemplate().find("from RoleGroup rg where rg.name = '"+ name +"'and rg.branchId ="+branchId +"and rg.status = 1");
       if(roleGroupList==null||roleGroupList.size()==0)return null;
-      return (RoleGroup)roleGroupList.get(0);
+      return roleGroupList.get(0);
    }
 
   public void saveRoleGroup(RoleGroup rg){
@@ -50,7 +50,7 @@ public class RoleGroupDaoHibernate extends BaseDaoSupport implements RoleGroupDa
    public void updateRoleGroup(RoleGroup rg){
       this.getHibernateTemplate().update(rg);
   }
-  public List getBranchList(){
+  public List<RoleGroup> getBranchList(){
       return this.getHibernateTemplate().find("select distinct rg.branchId from RoleGroup rg where rg.branchId is not null and rg.status = 1");
   } 
   public List getRoleUserList(Integer roleId){

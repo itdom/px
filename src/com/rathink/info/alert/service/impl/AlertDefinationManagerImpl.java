@@ -28,13 +28,15 @@ public class AlertDefinationManagerImpl implements AlertDefinationManager {
      public List<AlertDefination> AlertDefinationList(){
          List<AlertDefination> alertDefinationList = new ArrayList<AlertDefination>();
         Document document = readDocument(alert);
-        List<Node> nodeList = document.selectNodes("/alertDefinations/alertDefination");
+        @SuppressWarnings("unchecked")
+		List<Node> nodeList = document.selectNodes("/alertDefinations/alertDefination");
         return  processMenuList(nodeList,alertDefinationList, AuthorizationUtil.getAuthorization().getLocale()); 
      }
     public Map<String,AlertDefination>  AlertDefinationMap(){
         Map<String,AlertDefination>  alertDefinationMap = new LinkedHashMap<String,AlertDefination>();
         Document document = readDocument(alert);
-        List<Node> nodeList = document.selectNodes("/alertDefinations/alertDefination");
+        @SuppressWarnings("unchecked")
+		List<Node> nodeList = document.selectNodes("/alertDefinations/alertDefination");
        return  processMenuMap(nodeList,alertDefinationMap,new Locale("zh","CN"));
     }
     public static Document readDocument(String fileName) {
@@ -51,16 +53,13 @@ public class AlertDefinationManagerImpl implements AlertDefinationManager {
 
       private List<AlertDefination> processMenuList(List<Node> nodeList, List<AlertDefination> alertDefinationList, Locale locale) {
         for (Node node : nodeList) {
-//            String[] roleNames = node.selectSingleNode("@roles").getText().split(",");
                 String name = node.selectSingleNode("@name").getText();
                 String label = node.selectSingleNode("@label").getText();
-                String checkType=node.selectSingleNode("@checkType").getText();
                 String branchType=node.selectSingleNode("@branchType").getText();
                 String roles=node.selectSingleNode("@roles").getText();
                 AlertDefination alertDefination = new AlertDefination();
                 alertDefination.setId(String.valueOf(alertDefinationList.size()));
                 alertDefination.setName(name);
-//                alertDefination.setLabel(PropUtil.getValue(locale, label));
                 alertDefination.setLabel(label);
                 alertDefination.setBranchType(branchType);
                 alertDefination.setRoles(roles);

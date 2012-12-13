@@ -13,7 +13,7 @@ public class PageInfo {
 
 	private PageEntity pageEntity;
 
-	private List list;
+	private List<?>  list;
 
 	public int getCount() {
 		return count;
@@ -31,11 +31,11 @@ public class PageInfo {
 		this.pageEntity = pageEntity;
 	}
 
-	public List getList() {
+	public List<?>  getList() {
 		return list;
 	}
 
-	public void setList(List list) {
+	public void setList(List<?>  list) {
 		this.list = list;
 	}
 

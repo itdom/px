@@ -8,7 +8,6 @@ public class Menu {
 	private String id;
 	private String url;
 	private String label;
-	private Menu parent;
 
 	public Menu() {
 	}
@@ -35,13 +34,5 @@ public class Menu {
 
 	public void setLabel(String label) {
 		this.label = label;
-	}
-
-	public Menu getParent() {
-		return parent;
-	}
-
-	public void setParent(Menu parent) {
-		this.parent = parent;
 	}
 }

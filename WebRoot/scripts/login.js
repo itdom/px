@@ -1,4 +1,3 @@
-
 if (getCookie("username") != null) {
 	if (getCookie("username").indexOf(",") != -1) {
 		$("j_yey").value = getCookie("username").split(",")[1];

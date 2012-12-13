@@ -8,10 +8,18 @@
         </action>
     </package>
      
-    <!-- organ -->
-    <package name="organmgmt" extends="pxdefault" namespace="/system/organmgmt">
-        <action name="organ" class="organAction" method="organ">
-            <result name="success">/WEB-INF/pages/system/organmgmt/frame/organ.jsp</result>
+    <!-- user -->
+    <package name="user" extends="pxdefault" namespace="/system/user">
+        <action name="user" class="userAction">
+            <result name="success">/WEB-INF/pages/system/user/frame/user.jsp</result>
+        </action>
+         <!-- userMenu -->
+        <action name="userMenu" class="userAction" method="userMenu">
+            <result name="success">/WEB-INF/pages/system/user/frame/userMenu.jsp</result>
+        </action>
+         <!-- userList -->
+        <action name="userList" class="userAction" method="userList">
+            <result name="success">/WEB-INF/pages/system/user/userList.jsp</result>
         </action>
      </package>
 </struts>

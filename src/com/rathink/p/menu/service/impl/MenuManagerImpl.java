@@ -7,7 +7,6 @@ import com.rathink.p.menu.model.Menu;
 import com.rathink.p.menu.service.MenuManager;
 import org.dom4j.Document;
 import org.dom4j.Node;
-import org.dom4j.Element;
 import org.dom4j.DocumentException;
 import org.dom4j.io.SAXReader;
 import org.springframework.stereotype.Component;
@@ -29,8 +28,9 @@ public class MenuManagerImpl implements MenuManager {
             role.setLabel("普通用户");
             roleSet.add(role);
         Document document = getMenuDocumentByUser(user);
-        List<Node> newNodeList = document.selectNodes("/menus/menu");
-        this.processMenuList(newNodeList, null, menuList,roleSet,user.getLocale());
+        @SuppressWarnings("unchecked")
+		List<Node> newNodeList = document.selectNodes("/menus/menu");
+        this.processMenuList(newNodeList, menuList,roleSet,user.getLocale());
         return menuList;
     }
 
@@ -57,8 +57,7 @@ public class MenuManagerImpl implements MenuManager {
 
     }
 
-    @SuppressWarnings("unchecked")
-    private void processMenuList(List<Node> nodeList, Menu parent, List<Menu> menuList, Set<Role> roleSet,Locale locale) {
+    private void processMenuList(List<Node> nodeList, List<Menu> menuList, Set<Role> roleSet,Locale locale) {
         for (Node node : nodeList) {
             String[] roleNames = node.selectSingleNode("@roles").getText().split(",");
             if (this.checkRole(roleSet, roleNames)) {
@@ -66,11 +65,9 @@ public class MenuManagerImpl implements MenuManager {
                 String label = node.selectSingleNode("@label").getText();
                 Menu menu = new Menu();
                 menu.setId(String.valueOf(menuList.size()));
-                menu.setParent(parent);
                 menu.setUrl(url);
                 menu.setLabel(PropUtil.getValue(locale, label));
                 menuList.add(menu);
-                this.processMenuList(node.selectNodes("menu"), menu, menuList, roleSet,locale);
             }
         }
     }

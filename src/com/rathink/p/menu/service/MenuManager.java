@@ -6,8 +6,8 @@ import com.rathink.p.menu.model.Menu;
 import java.util.List;
 
 /**
- * User: Kyll
- * Time: 2008-8-11 15:36:31
+ * User: Gdl
+ * Time: 2012-12-23 15:36:31
  */
 public interface MenuManager {
 	public List<Menu> getMenuListByUser(User user);

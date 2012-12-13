@@ -33,7 +33,7 @@ public class RoleDaoHibernate extends BaseDaoSupport implements RoleDao {
 
 	@SuppressWarnings("unchecked")
 	public List<Role> getRoleList(final int start, final int max) {
-		return getHibernateTemplate().executeFind(new HibernateCallback() {
+		return getHibernateTemplate().executeFind(new HibernateCallback<Object>() {
 			public Object doInHibernate(Session session) throws HibernateException, SQLException {
 				Query query = session.createQuery("from Role");
 				query.setFirstResult(start);

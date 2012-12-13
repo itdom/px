@@ -9,10 +9,8 @@ public class Role implements GrantedAuthority {
 	private String description;
 	private Float price;
 	private Integer sort;
-	private String related;           //对应roles.mxl中的roles.role.branchType
     private String module;
     private String label;
-    private String branchType;
     public String getName(){
 		return name;
 	}
@@ -53,13 +51,6 @@ public class Role implements GrantedAuthority {
 		this.sort = sort;
 	}
 
-	public String getRelated() {
-		return related;
-	}
-
-	public void setRelated(String related) {
-		this.related = related;
-	}
 
     public String getModule() {
         return module;
@@ -77,21 +68,8 @@ public class Role implements GrantedAuthority {
         this.label = label;
     }
 
-    public String getBranchType() {
-        return branchType;
-    }
-
-    public void setBranchType(String branchType) {
-        this.branchType = branchType;
-    }
-
     public String getAuthority() {
 		return getName();
 	}
-
-    /*@Override
-    public int compareTo(Object o) {
-        return 0;
-    }*/
 
 }

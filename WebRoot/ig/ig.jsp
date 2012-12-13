@@ -122,6 +122,13 @@
                     <s:text name="info.message"/>
                 </div>
             </li>
+                <li class="row" id="ig_1_3">
+                <div class="title">
+                    <img src="<c:url value="/ig/img/ico/icod.gif" />" width="18" height="18" border="0" hspace="0"
+                         vspace="0" align="absmiddle"/>
+                    <s:text name="info.message"/>
+                </div>
+            </li>
     </ul>
     <ul class="cell" id="c_2" style="width: 21%;">
         <li class="row" id="ig_2_1">
@@ -135,22 +142,11 @@
 </div>
 
 <script type="text/javascript" language="JavaScript">
-   	    document.getElementById('ig_2_1').style.height = 432 + "px";
+   	    document.getElementById('ig_2_1').style.height = 532 + "px";
 	    sendRequestd('<c:url value="/igNewsToJson.action"/>', "size=10", "ig_1_1", "news");
 	    //sendRequest('<c:url value="/igMsgsToJson.action"/>', "size=10", "ig_1_2", "msgs");
 	    //endRequest('<c:url value="/showAlertByUserToJson.action"/>', "size=10", "ig_2_1", "alert");
-     function sendRequestd(url, queryStr, divId,src){
-      $.ajax({ 
-         url:url, 
-         type:'post', 
-         dataType:'json', 
-         success:function(data){ 
-         $.each(data.userInfosList,function(i,value){   
-               
-         }); 
-    } 
-});
-}
+
  
  </script>
 <rathink:divwindow height="400" width="600" left="0" top="0" id="win"></rathink:divwindow>

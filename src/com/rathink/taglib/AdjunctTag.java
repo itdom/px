@@ -2,7 +2,6 @@ package com.rathink.taglib;
 
 import java.io.IOException;
 import javax.servlet.jsp.JspWriter;
-import javax.servlet.jsp.PageContext;
 import javax.servlet.jsp.tagext.TagSupport;
 
 public class AdjunctTag extends TagSupport
