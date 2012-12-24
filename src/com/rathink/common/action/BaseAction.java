@@ -64,6 +64,7 @@ public class BaseAction extends ActionSupport implements ServletContextAware, Se
 
 	 
     public String getOtherTeachAreaName() {
+         System.out.println("hello gao de long"):
         return otherTeachAreaName;
     }
 
