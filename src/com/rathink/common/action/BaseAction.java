@@ -65,6 +65,7 @@ public class BaseAction extends ActionSupport implements ServletContextAware, Se
 	 
     public String getOtherTeachAreaName() {
          System.out.println("hello gao de long");
+         System.out.println("compare remote is have");
         return otherTeachAreaName;
     }
 
