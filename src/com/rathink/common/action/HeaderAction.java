@@ -23,6 +23,7 @@ public class HeaderAction extends BaseAction {
 	private List<Menu> menuList;
 
 	public String schoolHeader() {
+		System.out.println("hllo my love");
 		menuList = menuManager.getMenuListByUser(AuthorizationUtil.getAuthorization());
 		return SUCCESS;
 	}
