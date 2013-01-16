@@ -65,6 +65,7 @@ public class BaseAction extends ActionSupport implements ServletContextAware, Se
 	 
     public String getOtherTeachAreaName() {
          System.out.println("server is diff  cli plase give me some");
+         System.out.println("server is diff  cli plase give me some");
         return otherTeachAreaName;
     }
 
